@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+<h1>My D3.js Visualization</h1>
+<svg id="myChart" width="600" height="400"></svg>
+<script>
+    // D3.js code goes here
+    const data = [30, 80, 45, 60, 20, 90, 55];
+
+    const svg = d3.select("#myChart")
+        .selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", (d, i) => i * 70)
+        .attr("y", d => 400 - d)
+        .attr("width", 65)
+        .attr("height", d => d)
+        .attr("fill", "blue");
+</script>
+</body>
+</html>
